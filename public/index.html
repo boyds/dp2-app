@@ -4,112 +4,39 @@
     <meta charset="utf-8">
     <title>Welcome to DP2</title>
 
-    <!-- Firebase from CDN. TODO: host this on our own server -->
-    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+    <!-- Stylesheet libs -->
+    <link rel="stylesheet" type="text/css" href="lib/skeleton/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="lib/skeleton/css/skeleton.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="lib/csspin/csspin.css" media="screen">
 
-    <style media="screen">
-      body {
-        font-family: Roboto, Arial, sans-serif;
-        background: #ECEFF1;
-        color: rgba(0,0,0,0.87);
-      }
-
-      a {
-        color: rgb(3,155,229);
-      }
-
-      #message {
-        max-width: 400px;
-        margin: 40px auto;
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
-        border-radius: 2px;
-        background: white;
-        padding: 16px 24px;
-      }
-
-      #message h1 {
-        font-size: 22px;
-        font-weight: 500;
-        text-align: center;
-        margin: 0 0 16px;
-      }
-
-      #message p {
-        font-weight: 300;
-        line-height: 150%;
-        text-align: center;
-      }
-
-      #message ul {
-        list-style: none;
-        margin: 16px 0 0;
-        padding: 0;
-        text-align: center;
-      }
-
-      #message li a {
-        display: inline-block;
-        padding: 8px;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: 500;
-        background: rgb(3,155,229);
-        color: white;
-        border: 1px solid rgb(3,155,229);
-        border-radius: 3px;
-        font-size: 14px;
-        box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-      }
-    </style>
-
-    <script>
-      function addHandlers() {
-        var msgrefs = firebase.database().ref('messages');
-
-        // Listen for button pressed
-        msgrefs.limitToLast(10).on('child_added', function() {
-          self.clicks += 1;
-          document.getElementById("counter").innerHTML = "" + self.clicks;
-        });
-
-        // Allow button to be pressed
-        document.getElementById("btn-increase").onclick = function(e) {
-          msgrefs.push({
-            time: new Date().getTime()
-          });
-        }
-      }
-
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyD9en8rwMLPrD4Z3Y7slK9_htDY5ujV1nw",
-        authDomain: "dp2-production-ab213.firebaseapp.com",
-        databaseURL: "https://dp2-production-ab213.firebaseio.com",
-        storageBucket: "dp2-production-ab213.appspot.com",
-        messagingSenderId: "66149037996"
-      };
-      firebase.initializeApp(config);
-
-      // Hacky viewmodel
-      var self = {};
-      self.clicks = 0;
-
-      // Create GitHub authenticator provider
-      firebase.auth().signInAnonymously().then(function(result) {
-        addHandlers(self);
-      }).catch(function(error) {
-        // FIXME: Better handling
-        // FIXME: Beware, this catches errors from addHandler ..
-        alert("There was an authentication error.");
-      });
-    </script>
+    <!-- Custom stylesheets -->
+    <link rel="stylesheet" type="text/css" href="root.css" media="screen">
   </head>
   <body>
-    <div id="message">
-      <h1>Development Project 2</h1>
-      <p>This file was deployed to Firebase by Travis CI.</p>
-      <p>Press to increment all instances: <button id="btn-increase">+</button></p>
-      <h1 id="counter">0</h1>
+    <div class="navigation-wrapper">
+      <div class="navigation">
+        <ul id="main-menu">
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="products.html">Products</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <div id="authentication-loader">
+        <div class="authentication-wrapper">
+          <div class="cp-spinner cp-flip"></div>
+          <p>Authenticating, please wait ...</p>
+        </div>
+      </div>
     </div>
   </body>
+  <footer>
+    <!-- Libraries -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+    <script src="lib/jquery/jquery-3.2.0.min.js"></script>
+
+    <!-- Application code -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/firebase-authenticator.js"></script>
+  </footer>
 </html>

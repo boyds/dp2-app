@@ -1,0 +1,21 @@
+
+#authentication-loader {
+    position: fixed;
+    display: table;
+    z-index: 900;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.authentication-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 1.6rem;
+}
+
+.authentication-wrapper .cp-flip:before {
+    background-color: #039be5;
+}
