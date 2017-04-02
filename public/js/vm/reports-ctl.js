@@ -8,7 +8,7 @@ Reports.oninit = function() {
     //state.name = 'Reports';
 };
 
-Reports.view = function(state) {
+Reports.view = function(vdom) {
     var state = this;
 
     return [

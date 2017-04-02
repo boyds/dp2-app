@@ -8,7 +8,7 @@ Products.oninit = function() {
     state.name = 'Products';
 };
 
-Products.view = function(state) {
+Products.view = function(vdom) {
     var state = this;
     return m('h3', state.name);
 };

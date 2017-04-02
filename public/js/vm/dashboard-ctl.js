@@ -8,7 +8,7 @@ Dashboard.oninit = function() {
     state.name = 'Dashboard';
 };
 
-Dashboard.view = function(state) {
+Dashboard.view = function(vdom) {
     var state = this;
     return m('h3', state.name);
 };
