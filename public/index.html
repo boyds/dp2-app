@@ -16,17 +16,19 @@
     <div class="navigation-wrapper">
       <div class="navigation">
         <ul id="main-menu">
-          <li><a href="#/">Dashboard</a></li>
+          <li><a href="#/dashboard">Dashboard</a></li>
           <li><a href="#/products">Products</a></li>
           <li><a href="#/reports">Reports</a></li>
         </ul>
       </div>
     </div>
     <div class="content-wrapper">
-      <div id="authentication-loader">
-        <div class="authentication-wrapper">
-          <div class="cp-spinner cp-flip"></div>
-          <p>Authenticating, please wait ...</p>
+      <div id="page-root">
+        <div id="authentication-loader">
+          <div class="authentication-wrapper">
+            <div class="cp-spinner cp-flip"></div>
+            <p>Authenticating, please wait ...</p>
+          </div>
         </div>
       </div>
     </div>
@@ -40,5 +42,9 @@
     <!-- Application code -->
     <script src="js/firebase-config.js"></script>
     <script src="js/firebase-authenticator.js"></script>
+    <script src="js/vm/dashboard-ctl.js"></script>
+    <script src="js/vm/products-ctl.js"></script>
+    <script src="js/vm/reports-ctl.js"></script>
+    <script src="js/app-router.js"></script>
   </footer>
 </html>

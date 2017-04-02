@@ -1,0 +1,10 @@
+
+.content-wrapper {
+    padding-top: 50px;
+}
+
+#page-root {
+    width: 80%;
+    max-width: 960px;
+    margin: 20px auto;
+}
