@@ -1,3 +1,5 @@
+// Dashboard landing page module
+// ---
 
 var Dashboard = {};
 

@@ -1,4 +1,5 @@
 // Warning: This file was automatically generated from the Firebase console
+// ---
 
 // Initialize Firebase
     var config = {

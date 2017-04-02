@@ -1,3 +1,5 @@
+// Reporting page module
+// ---
 
 var Reports = {};
 

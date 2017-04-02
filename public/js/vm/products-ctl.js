@@ -1,3 +1,5 @@
+// Products list module
+// ---
 
 var Products = {};
 
