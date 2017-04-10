@@ -10,6 +10,7 @@ $(document).on("authentication_complete", function(e) {
     // Master SPA routes
     m.route(rel, "/dashboard", {
         "/dashboard": Dashboard,
+        "/products/add": AddProduct,
         "/products": Products,
         "/reports": Reports
     });
