@@ -1,6 +1,32 @@
 {
   "rules": {
     ".read": "auth != null",
-    ".write": "auth != null"
+    ".write": "auth != null",
+
+    "product": {
+        ".validate": "newData.hasChildren(['name', 'category', 'description'])",
+
+        // name: string. Textual name for this product. 0 < length < 200.
+        "name": {
+            ".validate": "newData.isString() && newData.length > 0 && newData.length <= 200"
+        },
+        // category: string. Identifier of a 'category/' entry for this product. 0 < length and key exists.
+        "category": {
+            // Category must exist
+            "validate": "newData.isString() && newData.length > 0 && root.child('category/' + newData.val()).exists()"
+        },
+        // description: string. A description for this product. 0 < length < 200.
+        "description": {
+            ".validate": "newData.isString() && newData.length > 0 && newData.length <= 200"
+        }
+    },
+    "category": {
+        ".validate": "newData.hasChildren(['name'])",
+
+        // name: string. Textual name for this category. 0 < length < 200.
+        "name": {
+            ".validate": "newData.isString() && newData.length > 0 && newData.length <= 200"
+        }
+    }
   }
 }
